@@ -30,7 +30,7 @@ opt.inccommand = "nosplit" -- Shows the effects of a command incrementally in th
 opt.splitright = true
 opt.splitbelow = true
 
-opt.undodir = os.getenv('HOME') .. '/.vim/undodir' -- Directory for undo files
+opt.undodir = vim.fn.stdpath('data') .. '/undodir' -- Directory for undo files
 opt.undofile = true                                -- Enable persistent undo
 opt.confirm = true
 
