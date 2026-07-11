@@ -39,6 +39,8 @@ local function nmap(kmap, cmd, desc)
     vim.keymap.set("n", kmap, cmd, { noremap = true, silent = true, desc = desc })
 end
 
+nmap("<leader>tm", "<cmd>TreesitterManage<CR>", "Treesitter: Manage Installed Parsers")
+
 nmap("<leader>ff", fzf.files, "Find files")
 nmap("<leader>fr", fzf.oldfiles, "Recent files")
 nmap("<leader>fg", fzf.git_files, "Git files")
