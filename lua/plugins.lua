@@ -9,15 +9,17 @@ vim.pack.add({
         src = 'https://github.com/Saghen/blink.cmp',
         version = vim.version.range("v1.*")
     },
+    { src = 'https://github.com/stevearc/conform.nvim' },
+    { src = 'https://github.com/mfussenegger/nvim-lint' },
+    'https://github.com/MeanderingProgrammer/render-markdown.nvim',
     -- { src = 'https://github.com/folke/which-key.nvim' },
 })
 
 
 
 vim.api.nvim_create_user_command("PackUpdate", function(info)
-  vim.pack.update(nil, { force = info.bang })
+    vim.pack.update(nil, { force = info.bang })
 end, { desc = "Update vim.pack plugins", bang = true })
-
 
 
 require("mason").setup({
@@ -30,3 +32,18 @@ require("mason").setup({
     }
 })
 
+require("conform").setup({
+    formatters_by_ft = {
+        systemverilog = { "verible" },
+        verilog = { "verible" },
+        python = { "ruff" },
+    },
+    default_format_opts = {
+        lsp_format = "fallback",
+    },
+    format_on_save = {
+        timeout_ms = 10000,
+        async = false,
+        lsp_format = "fallback",
+    },
+})
