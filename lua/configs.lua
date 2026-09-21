@@ -40,19 +40,21 @@ opt.winborder = "rounded"                            -- Use rounded borders for 
 opt.updatetime = 250
 opt.timeoutlen = 1000
 
+opt.exrc = true
+
 vim.cmd.filetype("plugin indent on") -- Enable filetype detection, plugins, and indentation
 
 vim.cmd.colorscheme "tokyonight-night"
 require('vim._core.ui2').enable({})
 
 vim.g.clipboard = {
-    name = "OSC 52",
-    copy = {
-        ["+"] = require("vim.ui.clipboard.osc52").copy("+"),
-        ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
-    },
-    paste = {
-        ["+"] = require("vim.ui.clipboard.osc52").paste("+"),
-        ["*"] = require("vim.ui.clipboard.osc52").paste("*"),
-    },
+	name = "OSC 52",
+	copy = {
+		["+"] = require("vim.ui.clipboard.osc52").copy("+"),
+		["*"] = require("vim.ui.clipboard.osc52").copy("*"),
+	},
+	paste = {
+		["+"] = require("vim.ui.clipboard.osc52").paste("+"),
+		["*"] = require("vim.ui.clipboard.osc52").paste("*"),
+	},
 }
