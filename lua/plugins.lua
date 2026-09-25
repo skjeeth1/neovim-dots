@@ -12,6 +12,7 @@ vim.pack.add({
 	{ src = 'https://github.com/stevearc/conform.nvim' },
 	{ src = 'https://github.com/mfussenegger/nvim-lint' },
 	'https://github.com/MeanderingProgrammer/render-markdown.nvim',
+	'https://github.com/lewis6991/gitsigns.nvim',
 	-- { src = 'https://github.com/folke/which-key.nvim' },
 })
 
