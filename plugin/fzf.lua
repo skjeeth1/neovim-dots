@@ -1,5 +1,11 @@
 local fzf = require('fzf-lua')
 fzf.setup({
+    fzf_opts = {
+        ["--info"] = "right",
+    },
+    grep = {
+        hidden = true,
+    },
     actions = {
         files = {
             ["default"] = fzf.actions.file_edit_or_qf,
@@ -25,3 +31,5 @@ fzf.setup({
         }
     }
 })
+
+fzf.register_ui_select()

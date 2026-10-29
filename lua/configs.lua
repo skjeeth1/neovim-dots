@@ -44,16 +44,21 @@ opt.exrc = true
 vim.cmd.filetype("plugin indent on") -- Enable filetype detection, plugins, and indentation
 
 vim.cmd.colorscheme "tokyonight-night"
+vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })    -- For non-current windows
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" }) -- For floating windows
+vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none" }) -- For floating window borders
+
 require('vim._core.ui2').enable({})
 
 vim.g.clipboard = {
-	name = "OSC 52",
-	copy = {
-		["+"] = require("vim.ui.clipboard.osc52").copy("+"),
-		["*"] = require("vim.ui.clipboard.osc52").copy("*"),
-	},
-	paste = {
-		["+"] = require("vim.ui.clipboard.osc52").paste("+"),
-		["*"] = require("vim.ui.clipboard.osc52").paste("*"),
-	},
+    name = "OSC 52",
+    copy = {
+        ["+"] = require("vim.ui.clipboard.osc52").copy("+"),
+        ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
+    },
+    paste = {
+        ["+"] = require("vim.ui.clipboard.osc52").paste("+"),
+        ["*"] = require("vim.ui.clipboard.osc52").paste("*"),
+    },
 }
